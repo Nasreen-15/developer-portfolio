@@ -1,0 +1,123 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --accent-red: #cf492c;
+    --accent-red-hover: #e65637;
+    --accent-red-glow: rgba(207, 73, 44, 0.35);
+    --bg-dark: #090807;
+    --bg-card: #13100e;
+    --bg-card-hover: #1c1815;
+    --border-color: rgba(207, 73, 44, 0.25);
+    --border-color-hover: rgba(207, 73, 44, 0.6);
+    --text-primary: #f3f4f6;
+    --text-secondary: #9ca3af;
+    --text-muted: #6b7280;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    color-scheme: dark;
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background-color: var(--bg-dark);
+    min-height: 100vh;
+    position: relative;
+  }
+
+  ::selection {
+    background-color: var(--accent-red);
+    color: #000000;
+  }
+
+  /* Custom Retro Developer Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #090807;
+    border-left: 1px solid rgba(207, 73, 44, 0.15);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #cf492c;
+    border-radius: 0px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #e65637;
+  }
+}
+
+/* Background Grid Overlay & Retro CRT / Glow Effects */
+.bg-grid-pattern {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(207, 73, 44, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(207, 73, 44, 0.05) 1px, transparent 1px);
+}
+
+.bg-dot-pattern {
+  background-size: 24px 24px;
+  background-image: radial-gradient(circle, rgba(207, 73, 44, 0.12) 1px, transparent 1px);
+}
+
+.glow-box {
+  box-shadow: 0 0 25px rgba(207, 73, 44, 0.15);
+}
+
+.glow-box-strong {
+  box-shadow: 0 0 40px rgba(207, 73, 44, 0.3);
+}
+
+.glow-text {
+  text-shadow: 0 0 12px rgba(207, 73, 44, 0.6);
+}
+
+.hard-shadow {
+  box-shadow: 4px 4px 0px #000000;
+}
+
+.hard-shadow-sm {
+  box-shadow: 2px 2px 0px #000000;
+}
+
+.hard-shadow-red {
+  box-shadow: 4px 4px 0px #cf492c;
+}
+
+/* Keyframes for micro-animations */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.animate-blink {
+  animation: blink 1s infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.4; filter: blur(40px); }
+  50% { opacity: 0.7; filter: blur(50px); }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 6s ease-in-out infinite;
+}
